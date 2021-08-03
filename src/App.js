@@ -1,26 +1,14 @@
+import React from "react";
 import './App.css';
+import Header from "./components/Header";
+import Nav from "./components/Nav";
+import Profile from "./components/Profile";
 
 const App = () => {
-    return (<div>
-        <Header/>
-        <div>
-            <input type="text"/>
-        </div>
-        <div className="btn">
-            <button>
-                click me
-            </button>
-            <button>
-                dont click me
-            </button>
-        </div>
-    </div>)
-}
-const Header = () => {
-    return (
-        <div>
-            <div>hello</div>
-            <div>world!</div>
+    return (<div className='app-wrapper'>
+            <Header/>
+            <Nav/>
+            <Profile/>
         </div>
     )
 }
