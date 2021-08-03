@@ -1,14 +1,14 @@
 import React from "react";
 import './App.css';
 import Header from "./components/Header";
-import Nav from "./components/Nav";
-import Profile from "./components/Profile";
+import Nav1 from "./components/Nav";
+import Profile1 from "./components/Profile";
 
 const App = () => {
     return (<div className='app-wrapper'>
             <Header/>
-            <Nav/>
-            <Profile/>
+            <Nav1/>
+            <Profile1/>
         </div>
     )
 }
