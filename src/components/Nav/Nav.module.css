@@ -5,3 +5,9 @@
 .item{
     color: white;
 }
+.item:hover{
+    color:gold;
+}
+.item.activ{
+    color: #dc1337;
+}

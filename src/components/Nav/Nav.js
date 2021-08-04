@@ -7,16 +7,16 @@ const Nav = () => {
             <div>
                 <a className={s.item} href='/#'>Profile</a>
             </div>
-            <div className='item'>
+            <div >
                 <a className={s.item} href='/#'>Messages</a>
             </div>
-            <div className='item'>
+            <div>
                 <a className={s.item} href='/#'>News</a>
             </div>
-            <div className='item'>
-                <a className={s.item} href='/#'>Music</a>
+            <div >
+                <a className={`${s.item} ${s.activ}`} href='/#'>Music</a>
             </div>
-            <div className='item'>
+            <div >
                 <a className={s.item} href='/#'>Settings</a>
             </div>
         </nav>
