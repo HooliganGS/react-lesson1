@@ -9,9 +9,9 @@ const MyPosts = () => {
             <div className={s.item}>
                 new post
             </div>
-            <Post/>
-            <Post/>
-            <Post/>
+            <Post text='hello' area='hey' coun='15'/>
+            <Post text='hello' area='hey and hi' coun='20'/>
+
         </div>
     )
 }
