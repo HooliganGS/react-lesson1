@@ -1,6 +1,7 @@
 .nav {
     grid-area: n;
     background-color: aquamarine;
+    padding: 20px;
 }
 .item{
     color: white;
@@ -8,6 +9,10 @@
 .item:hover{
     color:gold;
 }
-.item.activ{
-    color: #dc1337;
+
+a{
+    text-decoration: none;
+}
+a:focus{
+    color: gold;
 }
