@@ -1,3 +1,5 @@
+import {renderThree} from "../renderJs";
+
 let state = {
     statePostData: {
         MyPostData: [
@@ -19,6 +21,20 @@ let state = {
             {message: 'hey'}
         ]
     },
-
+    stateFriendList: {
+        DataFriend: [
+            {name: 'Илья'},
+            {name: 'Игорь'},
+            {name: 'Вова'},
+        ]
+    }
 }
+export let addPost = (postMessage) =>{
+    let newPost = {
+        id:5, text: postMessage, coun: 0
+    };
+    state.statePostData.MyPostData.push(newPost);
+    renderThree(state);
+}
+
 export default state;
