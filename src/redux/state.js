@@ -1,40 +1,60 @@
-import {renderThree} from "../renderJs";
+let store ={
+    _state : {
+        statePostData: {
+            MyPostData: [
+                {id: 1, text: 'hello', coun: 0},
+                {id: 2, text: 'privki', coun: 15},
+                {id: 3, text: 'hello', coun: 20},
+            ],
+            NewPostText: 'It-camasutra'
 
-let state = {
-    statePostData: {
-        MyPostData: [
-            {id: 1, text: 'hello', coun: 0},
-            {id: 2, text: 'privki', coun: 15},
-            {id: 3, text: 'hello', coun: 20},
-        ]
+        },
+        stateDialogs: {
+            DataDialogs: [
+                {id: 1, name: 'Ilya'},
+                {id: 2, name: 'Igor'},
+                {id: 3, name: 'Anastasiya'},
+                {id: 4, name: 'Vladimir'},
+            ],
+            DataMessage: [
+                {message: 'hello'},
+                {message: 'hi'},
+                {message: 'hey'}
+            ]
+        },
+        stateFriendList: {
+            DataFriend: [
+                {name: 'Илья'},
+                {name: 'Игорь'},
+                {name: 'Вова'},
+            ]
+        }
     },
-    stateDialogs: {
-        DataDialogs: [
-            {id: 1, name: 'Ilya'},
-            {id: 2, name: 'Igor'},
-            {id: 3, name: 'Anastasiya'},
-            {id: 4, name: 'Vladimir'},
-        ],
-        DataMessage: [
-            {message: 'hello'},
-            {message: 'hi'},
-            {message: 'hey'}
-        ]
+    getState(){
+        return this._state;
     },
-    stateFriendList: {
-        DataFriend: [
-            {name: 'Илья'},
-            {name: 'Игорь'},
-            {name: 'Вова'},
-        ]
-    }
-}
-export let addPost = (postMessage) =>{
-    let newPost = {
-        id:5, text: postMessage, coun: 0
-    };
-    state.statePostData.MyPostData.push(newPost);
-    renderThree(state);
+    _callSubscriber() {
+        console.log('State changed');
+    },
+    addPost(){
+        let newPost = {
+            id:5,
+            text: this._state.statePostData.NewPostText,
+            coun: 0
+        };
+        this._state.statePostData.MyPostData.push(newPost);
+        this._state.statePostData.NewPostText = ('');
+        this._callSubscriber(this._state);
+    },
+    updateNewPost(newText){
+        this._state.statePostData.NewPostText = newText;
+        this._callSubscriber(this._state);
+    },
+    subscribe(observer){
+        this._callSubscriber = observer;
+    },
 }
 
-export default state;
+
+
+export default store;

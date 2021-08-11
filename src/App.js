@@ -16,10 +16,16 @@ const App = (props) => {
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Nav DataFriend = {props.stateApp.stateFriendList} />
+                <Nav DataFriend={props.stateApp.stateFriendList}/>
                 <div className="app-wrapper-content">
-                    <Route path='/Profile' render={()=><Profile Post ={props.stateApp.statePostData} addPost={props.addPost}/>}/>
-                    <Route path='/Dialogs' render={()=><Dialogs Dialogs ={props.stateApp.stateDialogs} />}/>
+                    <Route path='/Profile' render={() => <Profile
+                        Post={props.stateApp.statePostData}
+                        addPost={props.addPost}
+                        NewPostText={props.stateApp.statePostData.NewPostText}
+                        updateNewPost={props.updateNewPost}
+                    />}/>
+                    <Route path='/Dialogs' render={() => <Dialogs
+                        Dialogs={props.stateApp.stateDialogs}/>}/>
                     <Route path='/Music' component={Music}/>
                     <Route path='/News' component={News}/>
                     <Route path='/Settings' component={Settings}/>

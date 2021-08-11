@@ -1,7 +1,19 @@
 import reportWebVitals from './reportWebVitals';
-import state from "./redux/state";
-import {renderThree} from "./renderJs";
+import store from "./redux/state";
+import ReactDOM from "react-dom";
+import App from "./App";
+import React from "react";
 
-renderThree(state);
+let renderThree = (state) => {
+    ReactDOM.render(
+        <React.StrictMode>
+            <App stateApp={state} addPost={store.addPost.bind(store)} updateNewPost={store.updateNewPost.bind(store)}/>
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+}
+
+renderThree(store.getState());
 
 reportWebVitals();
+store.subscribe(renderThree);
