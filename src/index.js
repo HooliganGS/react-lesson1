@@ -7,7 +7,7 @@ import React from "react";
 let renderThree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App stateApp={state} addPost={store.addPost.bind(store)} updateNewPost={store.updateNewPost.bind(store)}/>
+            <App stateApp={state} dispatch={store.dispatch.bind(store)}/>
         </React.StrictMode>,
         document.getElementById('root')
     );
