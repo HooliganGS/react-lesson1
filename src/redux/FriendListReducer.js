@@ -3,6 +3,7 @@ let initialState = {
         {name: 'Илья'},
         {name: 'Игорь'},
         {name: 'Вова'},
+        {name: 'Ира'}
     ]
 };
 const FriendListReducer = (state = initialState, action) => {

@@ -8,16 +8,16 @@ let initialState = {
         {id: 3, name: 'Anastasiya'},
         {id: 4, name: 'Vladimir'},
     ],
-        DataMessage: [
-    {id: 1, message: 'hello'},
-    {id: 2, message: 'hi'},
-    {id: 3, message: 'hey'}
-],
+    DataMessage: [
+        {id: 1, message: 'hello'},
+        {id: 2, message: 'hi'},
+        {id: 3, message: 'hey'}
+    ],
     newMessageText: '',
 }
 
 
-const DialogsReducer = (state=initialState, action) => {
+const DialogsReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_TEXT:
