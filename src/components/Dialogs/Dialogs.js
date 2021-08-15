@@ -7,7 +7,7 @@ const Dialogs = (props) => {
 let state = props.stateDialogs;
 
     let Dialogs = state.DataDialogs.map((el) => <DialogItem name={el.name} id={el.id}/>)
-    let Messages = state.DataMessage.map((message) => <DialogMessage message={message.message}/>)
+    let Messages = state.DataMessage.map((message) => <DialogMessage message={message.message} id={message.id}/>)
     let NewMessageText = state.newMessageText;
 
     let addMessage = () => {

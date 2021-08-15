@@ -4,7 +4,7 @@ import Post from "../Post";
 
 
 const MyPosts = (props) => {
-    let PostData = props.MyPostData.map((post)=><Post text={post.text} coun={post.coun}/>)
+    let PostData = props.MyPostData.map((post)=><Post text={post.text} coun={post.coun} id={post.id}/>)
     let NewPostElement = React.createRef();
     let onAddPost =()=>{
         props.addPostBtn();

@@ -10,20 +10,17 @@ import Settings from "./components/Settings/Settings"
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 
+
 const App = (props) => {
 
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Nav DataFriend={props.stateApp.stateFriendList}/>
+                <Nav />
                 <div className="app-wrapper-content">
-                    <Route path='/Profile' render={() => <Profile
-                        store={props.store}
-                    />}/>
-                    <Route path='/Dialogs' render={() => <DialogsContainer
-                        store={props.store}
-                    />}/>
+                    <Route path='/Profile' render={() => <Profile/>}/>
+                    <Route path='/Dialogs' render={() => <DialogsContainer/>}/>
                     <Route path='/Music' component={Music}/>
                     <Route path='/News' component={News}/>
                     <Route path='/Settings' component={Settings}/>

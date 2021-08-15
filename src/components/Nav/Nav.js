@@ -1,7 +1,7 @@
 import React from "react";
 import s from './Nav.module.css';
 import {NavLink} from "react-router-dom";
-import FriendsList from "./friendsList/friendsList";
+
 
 
 const Nav = (props) => {
@@ -23,7 +23,7 @@ const Nav = (props) => {
                 <NavLink className={s.item} to='/Settings'>Settings</NavLink>
             </div>
 
-            <FriendsList DataFriend={props.DataFriend.DataFriend} />
+
 
         </nav>
     )

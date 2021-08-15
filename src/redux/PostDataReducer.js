@@ -10,21 +10,27 @@ let initialState = {
     NewPostText: 'It-camasutra'
 };
 
-const PostDataReducer = (state = initialState, action)=>{
+const PostDataReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST: {
             let newPost = {
                 id: 5,
                 text: state.NewPostText,
                 coun: 0
             };
-            state.MyPostData.push(newPost);
-            state.NewPostText = ('');
-            break;
-        case UPDATE_NEW_POST:
-            state.NewPostText = action.newText;
-            break;
+            return{
+                ...state,
+                MyPostData: [...state.MyPostData, newPost],
+                NewPostText: ('')
+            };
+        }
+        case UPDATE_NEW_POST: {
+            return {
+                ...state,
+                NewPostText:action.newText}
+
+        }
     }
     return state;
 }
