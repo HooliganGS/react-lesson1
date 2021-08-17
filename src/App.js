@@ -8,11 +8,12 @@ import {BrowserRouter, Route} from "react-router-dom";
 import News from "./components/News/News"
 import Settings from "./components/Settings/Settings"
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
+
 
 
 
 const App = (props) => {
-
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -24,7 +25,9 @@ const App = (props) => {
                     <Route path='/Music' component={Music}/>
                     <Route path='/News' component={News}/>
                     <Route path='/Settings' component={Settings}/>
+                    <Route path='/Users' render={() => <UsersContainer/>}/>
                 </div>
+
             </div>
         </BrowserRouter>
     )

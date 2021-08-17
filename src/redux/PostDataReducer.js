@@ -29,7 +29,6 @@ const PostDataReducer = (state = initialState, action) => {
             return {
                 ...state,
                 NewPostText:action.newText}
-
         }
     }
     return state;
