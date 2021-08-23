@@ -2,9 +2,10 @@ import React from "react";
 import s from "./Dialogs.module.css"
 import DialogMessage from "./Dialog/Message/DialogMessage";
 import DialogItem from "./Dialog/DialogItem/DialogItem";
+import {Redirect} from "react-router-dom";
 
 const Dialogs = (props) => {
-let state = props.stateDialogs;
+    let state = props.stateDialogs;
 
     let Dialogs = state.DataDialogs.map((el) => <DialogItem name={el.name} id={el.id}/>)
     let Messages = state.DataMessage.map((message) => <DialogMessage message={message.message} id={message.id}/>)
@@ -18,6 +19,8 @@ let state = props.stateDialogs;
         let text = e.target.value;
         props.updateMessageText(text);
     }
+
+
 
     return (
         <div className={s.Dialogs}>
