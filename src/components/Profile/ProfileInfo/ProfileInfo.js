@@ -1,6 +1,7 @@
 import s from "./ProfileInfo.module.css";
 import React from "react";
 import Preloader from "../../Common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus"
 
 const ProfileInfo =(props)=>{
     if(!props.profile){
@@ -13,6 +14,7 @@ const ProfileInfo =(props)=>{
                 <img  className={s.imgStyle}
                     src={props.profile.photos.large}
                     alt="img"/>
+                <ProfileStatus status='i am terminator'/>
             </div>
             <div>Полное имя :{props.profile.fullName}</div>
             <div>Twitter: {props.profile.contacts.twitter}</div>
