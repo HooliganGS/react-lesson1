@@ -14,7 +14,7 @@ const ProfileInfo =(props)=>{
                 <img  className={s.imgStyle}
                     src={props.profile.photos.large}
                     alt="img"/>
-                <ProfileStatus status='i am terminator'/>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
             </div>
             <div>Полное имя :{props.profile.fullName}</div>
             <div>Twitter: {props.profile.contacts.twitter}</div>
