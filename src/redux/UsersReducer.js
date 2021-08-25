@@ -66,7 +66,7 @@ const UsersReducer = (state = initialState, action) => {
                 ...state,
                 followingInProgress: action.isFetching
                     ? [...state.followingInProgress, action.userID]
-                    : state.followingInProgress.filter(id => id != action.userID)
+                    : state.followingInProgress.filter(id => id !== action.userID)
             }
         }
         default:
@@ -133,6 +133,7 @@ export const follow = (userId) => {
         usersAPI.follow(userId)
             .then(response => {
                 if (response.data.resultCode === 0) {
+
                     dispatch(followSuccess(userId));
                 }
                 dispatch(toggleFollowingProgress(false, userId))
